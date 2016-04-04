@@ -4,4 +4,6 @@ jdk:
   - oraclejdk7
   - openjdk7
 script:
-  - gradle javadoc
+  - gradle javadoc test
+after_success:
+  - gradle jacocoTestReport coveralls
