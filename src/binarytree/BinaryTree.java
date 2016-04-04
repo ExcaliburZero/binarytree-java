@@ -26,5 +26,38 @@ package binarytree;
  *
  * @author Christopher Wells {@literal <cwellsny@nycap.rr.com>}
  */
-public class BinaryTree {
+public class BinaryTree<T> {
+
+    private T value;
+    private BinaryTree<T> leftBranch;
+    private BinaryTree<T> rightBranch;
+
+    /**
+     * Initializes an object of the <code>BinaryTree</code> class with no
+     * initial values.
+     */
+    public BinaryTree() {
+        this.value = null;
+        this.leftBranch = null;
+        this.rightBranch = null;
+    }
+
+    /**
+     * Returns the current value stored in the node of the BinaryTree.
+     *
+     * @return The current value stored in the node of the BinaryTree.
+     */
+    public T getValue() {
+        return this.value;
+    }
+
+    /**
+     * Sets the value stored in the node of the BinaryTree.
+     *
+     * @param value The new value of the node.
+     */
+    public void setValue(T value) {
+        this.value = value;
+    }
+
 }

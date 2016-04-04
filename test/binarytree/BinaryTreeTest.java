@@ -34,4 +34,28 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnitParamsRunner.class)
 public class BinaryTreeTest {
+
+    /**
+     * Tests of the constructor, getValue, and setValue methods of the
+     * BinaryTree class.
+     */
+    @Test
+    @Parameters(method = "testGetSetBranchesParameters")
+    public void testGetSetBranches(Object inputObject) {
+        BinaryTree binaryTree = new BinaryTree<>();
+
+        assertEquals(null, binaryTree.getValue());
+
+        binaryTree.setValue(inputObject);
+        assertEquals(inputObject, binaryTree.getValue());
+    }
+
+    private Object[] testGetSetBranchesParameters() {
+        return new Object[] {
+            new Object[]{"Hello World"},
+            new Object[]{null},
+            new Object[]{new Object()},
+            new Object[]{new Exception()},
+        };
+    }
 }
